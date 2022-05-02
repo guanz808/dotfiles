@@ -13,6 +13,7 @@ set hlsearch  " Highlighting when doing a search. nohlsearch or hlsearch
 set history=1000  " Set the commands to save in history default number is 20.
 set title  " show the file title
 set wildmenu  " show a more advanced menu for auto-completion suggestions
+set encoding=UTF-8
 
 " Tabs size
 set smarttab
@@ -47,6 +48,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'sainnhe/edge'
   " == Plugin =====================
+  Plug 'ryanoasis/vim-devicons'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   
@@ -54,6 +56,5 @@ call plug#begin('~/.config/nvim/plugged')
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
  
-call plug#end()
- 
+call plug#end() 
 :colorscheme edge 
