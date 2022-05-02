@@ -13,7 +13,6 @@ set hlsearch  " Highlighting when doing a search. nohlsearch or hlsearch
 set history=1000  " Set the commands to save in history default number is 20.
 set title  " show the file title
 set wildmenu  " show a more advanced menu for auto-completion suggestions
-":colorscheme monokai
 
 " Tabs size
 set smarttab
