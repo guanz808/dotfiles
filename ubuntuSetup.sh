@@ -1,5 +1,5 @@
 #!/bin/bash
-
+cd ~
 apt update && apt upgrade -y
 apt install wget jq curl unzip gnupg software-properties-common git -y
 
@@ -60,10 +60,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Download ZSH .zshrc config file
-curl -o .zshrc https://raw.githubusercontent.com/guanz808/dotfiles/main/.zshrc ~/
+curl -o .zshrc https://raw.githubusercontent.com/guanz808/dotfiles/main/.zshrc
 
 # Download Powerlevel10 .p10k.zsh config file
-curl -o .p10k.zsh https://raw.githubusercontent.com/guanz808/dotfiles/main/.p10k.zsh ~/
+curl -o .p10k.zsh https://raw.githubusercontent.com/guanz808/dotfiles/main/.p10k.zsh
 
 # Start ZSH
 zsh
