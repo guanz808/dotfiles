@@ -1,5 +1,5 @@
 " Options
-"set background=dark  " apply the color set for dark screens
+set background=dark  " apply the color set for dark screens
 set number  " show line numbers
 "set relativenumber  "show line numbers starting from the current oneset autoindent
 set mouse=a  " allows the use of the mouse in the editorset clipboard=unnamedplus
@@ -22,7 +22,7 @@ set shiftwidth=2  " number of spaces fpr indention
 set tabstop=2  " number of soaces for tabs
 set softtabstop=2
 
-" add automatic syntax suppoert for open files
+" add automatic syntax support for open files
 filetype plugin indent on
 syntax on
 set t_Co=256i  " enable 256 colors on the terminal
