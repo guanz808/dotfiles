@@ -113,7 +113,7 @@ neofetch
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Add starship configuration to zshrc files
-starship init zsh
+eval "$(starship init zsh)"
 
 # Configure starship to use JetBrains Mono font
 export STARSHIP_FONT=JetBrainsMono-Regular
