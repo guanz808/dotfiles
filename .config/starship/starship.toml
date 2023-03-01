@@ -1,0 +1,24 @@
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+vicmd_symbol = "[](bold green)"
+
+[git_branch]
+symbol = " "
+
+[git_status]
+ahead = " "
+behind = " "
+diverged = " "
+renamed = "➜ "
+deleted = " "
+staged = " "
+untracked = " "
+
+[cmd_duration]
+min_time = 5000
+format = "took [⏱ ]"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
