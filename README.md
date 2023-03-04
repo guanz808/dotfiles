@@ -4,8 +4,8 @@
 ```
 apt update && apt upgrade -y
 apt install curl -y
-curl -o ~/ubuntusetup01.sh https://raw.githubusercontent.com/guanz808/dotfiles/main/ubuntusetup01.sh
+curl -o ~/ubuntu_setup01.sh https://raw.githubusercontent.com/guanz808/dotfiles/main/ubuntu_setup01.sh
 cd ~
-chmod +x ubuntusetup01.sh
-./ubuntusetup01.sh -y
+chmod +x ubuntu_setup01.sh
+./ubuntu_setup01.sh -y
 ```
