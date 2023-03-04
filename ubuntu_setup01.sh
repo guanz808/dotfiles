@@ -33,7 +33,14 @@ unzip Hack-v3.003-ttf.zip -d /usr/local/share/fonts -yellow -y
 rm -rf Hack-v3.003-ttf.zip
 
 # Install neofetch
-# apt install -y neofetch
+apt install -y neofetch
+
+# Download neofetch config.conf file
+mkdir -p ~/.config/neofetch
+curl -o ~/.config/neofetch/config.conf https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/neofetch/config.conf
+
+# install neovim
+apt install neovim -y
 
 # Download neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
@@ -45,14 +52,7 @@ mkdir -p ~/.config/nvim
 apt install ./nvim-linux64.deb
 rm -rf ./nvim-linux64.deb
 
-# Download neofetch config.conf file
-mkdir -p ~/.config/neofetch
-curl -o ~/.config/neofetch/config.conf https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/neofetch/config.conf
-
-# install neovim
-apt install neovim -y
-
-# Download nevim configuration files
+# Download neovim configuration files
 cd ~
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/nvim/colors
