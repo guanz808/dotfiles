@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~
 apt update && apt upgrade -y
-apt install wget jq curl unzip gnupg software-properties-common git -y
+apt install wget jq curl unzip gnupg software-properties-common git -y 
 
 # Azure CLI
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
@@ -33,7 +33,17 @@ unzip Hack-v3.003-ttf.zip -d /usr/local/share/fonts -yellow -y
 rm -rf Hack-v3.003-ttf.zip
 
 # Install neofetch
-apt install -y neofetch
+# apt install -y neofetch
+
+# Download neovim
+curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+
+# Create ~/.config/nvim folder
+mkdir -p ~/.config/nvim
+
+# install neovim and cleanup
+apt install ./nvim-linux64.deb
+rm -rf ./nvim-linux64.deb
 
 # Download neofetch config.conf file
 mkdir -p ~/.config/neofetch
