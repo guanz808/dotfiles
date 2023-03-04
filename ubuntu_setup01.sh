@@ -40,7 +40,7 @@ mkdir -p ~/.config/neofetch
 curl -o ~/.config/neofetch/config.conf https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/neofetch/config.conf
 
 # install neovim
-apt install neovim -y
+# apt install neovim -y
 
 # Download neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
