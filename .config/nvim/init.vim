@@ -56,5 +56,5 @@ call plug#begin('~/.config/nvim/plugged')
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
  
-call plug#end() 
-:colorscheme edge 
+" call plug#end() 
+" :colorscheme edge 
