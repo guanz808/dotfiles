@@ -1,7 +1,7 @@
 " Options
 set background=dark  " apply the color set for dark screens
 set number  " show line numbers
-"set relativenumber  "show line numbers starting from the current oneset autoindent
+set relativenumber  "show line numbers starting from the current oneset autoindent
 set mouse=a  " allows the use of the mouse in the editorset clipboard=unnamedplus
 set completeopt=noinsert,menuone,noselect
 set splitbelow splitright  " screens will always split below the current screen and to the rightset title
