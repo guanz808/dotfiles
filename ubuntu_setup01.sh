@@ -64,6 +64,10 @@ curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.
 mkdir -p ~/.config/nvim
 curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
 
+# Neovin fix
+rm /usr/share/applications/nvim.desktop
+apt-get remove neovim-runtime -y
+
 # install neovim and cleanup
 apt install ./nvim-linux64.deb
 rm -rf ./nvim-linux64.deb
