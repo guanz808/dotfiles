@@ -27,14 +27,14 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 && apt update \
 && apt install gh -y
 
-# Install JetBrains Mono font (used by starship and neovim)
+# Install JetBrains Mono font (used by starship and neovim)  < FIX FONT LOCATION TO SAVE IN USER PROFILE >
 wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
 unzip Hack-v3.003-ttf.zip -d /usr/local/share/fonts -yellow -y 
 rm -rf Hack-v3.003-ttf.zip
 
 # move files from the dotfile to the root
 # Download dotfiles from GitHub
-git clone https://github.com/guanz808/dotfiles.git
+# git clone https://github.com/guanz808/dotfiles.git
 
 ### Remove the .config directory ###
 rm -rf .config
@@ -42,10 +42,10 @@ rm -rf .config
 # Move necessary files to home directory and remove unnecessary files
 mv -f dotfiles/{.bashrc,.zshrc} ~
 mv -f dotfiles/.config ~
+mv -f dotfiles/.zshenv ~
 rm -rf dotfiles/{.git,LICENSE,README.md}
 
-# Cleanup
-rm -rf dotfiles
+
 
 ### Install neofetch ###
 apt install -y neofetch
@@ -61,8 +61,8 @@ apt install -y neofetch
 curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
 
 # Create ~/.config/nvim folder
-mkdir -p ~/.config/nvim
-curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
+# mkdir -p ~/.config/nvim
+# curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
 
 # Neovin fix
 rm /usr/share/applications/nvim.desktop
@@ -70,7 +70,7 @@ apt-get remove neovim-runtime -y
 
 # install neovim and cleanup
 apt install ./nvim-linux64.deb
-rm -rf ./nvim-linux64.deb
+
 
 # Download neovim configuration files
 #cd ~
@@ -88,19 +88,25 @@ chsh -s $(which zsh)  # make zsh the default shell
 # Install OMZ
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-##  # Install OMZ syntax highlighting and autosuggestions
-##  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-##  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-##  
+### Install ZSH syntax highlighting and autosuggestions
+# download the syntax-highlighter plugin to a custom plugin directory and install (non-existing command are highlighted in red)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZDOTDIR:-~/.config/zsh}/plugins/zsh-syntax-highlighting
+
+# download the autosuggestions plugin to a custom plugin directory and install (auto completes words)
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZDOTDIR:-~/.config/zsh}/plugins/zsh-autosuggestions
+
+# download the zsh-history-substring-search plugin to a custom plugin directory and install
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZDOTDIR:-~/.config/zsh}/plugins/zsh-history-substring-search
+
 ##  # Install necessary packages for starship
 ##  apt-get update &&  apt-get install curl -y
 ##  
-##  # Install Starship
-##  wget https://starship.rs/install.sh -O starshipInstall.sh
-##  chmod +x starshipInstall.sh
-##  ./starshipInstall.sh -y
-##  rm -rf starshipInstall.sh
-##  
+# Install Starship
+wget https://starship.rs/install.sh -O starshipInstall.sh
+chmod +x starshipInstall.sh
+./starshipInstall.sh -y
+
+
 ##  # Add starship.toml configuration file
 ##  cd ~
 ##  mkdir -p ~/.config/starship
@@ -111,4 +117,8 @@ chsh -s $(which zsh)  # make zsh the default shell
 ##  
 ##  # Start ZSH
 ##  zsh
-##  
+
+# Cleanup
+rm -rf dotfiles
+rm -rf ./nvim-linux64.deb
+rm -rf starshipInstall.sh

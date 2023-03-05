@@ -61,3 +61,11 @@ bindkey '^[[B' history-substring-search-down
 
 ### zsh colored files directories
 alias ls='ls --color=auto'
+
+### Applications
+# Starship
+eval "$(starship init zsh)
+export STARSHIP_FONT=JetBrainsMono-Regular
+
+# Run neofetch to create the config.conf file
+neofetch
