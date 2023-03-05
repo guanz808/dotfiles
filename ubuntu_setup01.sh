@@ -82,12 +82,12 @@ rm -rf ./nvim-linux64.deb
 # sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
 #       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-##  # Install ZSH
-##  apt install zsh -y
-##  chsh -s $(which zsh)  # make zsh the default shell
-##  # Install OMZ
-##  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-##  
+# Install ZSH
+apt install zsh -y
+chsh -s $(which zsh)  # make zsh the default shell
+# Install OMZ
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 ##  # Install OMZ syntax highlighting and autosuggestions
 ##  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ##  git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
