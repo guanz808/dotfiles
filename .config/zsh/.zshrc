@@ -1,71 +1,101 @@
-# If you come from bash you might have to change your $PATH.
-#export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$PATH:/usr/local/bin"
+##############
+##############
+### .zshrc ###
+##############
+##############
 
-### ZSH HOME
-export ZSH=$HOME/.config/zsh
+source ~/.zshenv 
+ 
+#########################
+# Environment variables #
+#########################
 
-### history config 
-export HISTFILE=$ZSH/.zsh_history
+export ZSH=$HOME/.config/zsh  # ZSH HOME
+export HISTFILE=$ZSH/.zsh_history  # history config 
+export HISTSIZE=10000  # How many commands zsh will load to memory
+export SAVEHIST=10000  # How many commands history will save on file
+export EDITOR=nvim
+export VISUAL=nvim
+ 
+###########
+# Options #
+###########
 
-# How many commands zsh will load to memory.
-export HISTSIZE=10000
+setopt HIST_IGNORE_ALL_DUPS  # History won't save duplicates
+setopt HIST_FIND_NO_DUPS  # History won't show duplicates on search
 
-# How many commands history will save on file.
-export SAVEHIST=10000
-
-### Options
-# History won't save duplicates.
-setopt HIST_IGNORE_ALL_DUPS
-
-# History won't show duplicates on search.
-setopt HIST_FIND_NO_DUPS
-
-#setopt autocd
-#unsetopt menu_complete
-#unsetopt flowcontrol
-
+###########
+# Aliases #
+###########
+ 
+alias zrc="$EDITOR $ZSH/.zshrc"
+alias ll='ls -lah'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'  # zsh colored files directories
+ 
+ 
+#############
+# Functions #
+#############
+ 
+#############################  !! Uncomment if not using starship !!
+# Load git stuff for prompt #
+#############################
+ 
+#autoload -Uz vcs_info  # Where do these come from? What else is there?
+#precmd_vcs_info() { vcs_info }
+#precmd_functions+=( precmd_vcs_info )
+#zstyle ':vcs_info:git:*' formats '%F{blue}(%b)%f'
+#zstyle ':vcs_info:*' enable git
 #setopt prompt_subst
-#setopt always_to_end
-#setopt append_history
-#setopt auto_menu
-#setopt complete_in_word
-#setopt extended_history
-#setopt hist_expire_dups_first
-#setopt hist_ignore_dups
-#setopt hist_ignore_space
-#setopt hist_verify
-#setopt inc_append_history
-#setopt share_history
+ 
+######################## !! Uncomment if not using starship !!
+# Prompt customization #
+########################
+ 
+# All escape codes at http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html
+ 
+# %F{color} sets the color
+# %n is username
+# %M is full hostname
+# %f resets formatting
+# %~ is current working directory
+# PROMPT='%F{green}%n@%F{cyan}%m:%~%f$vcs_info_msg_0_> '
+ 
+# %W is the date
+# %* is time
+# %? is the return code of previous command
+# %(q.n.y) is a ternary that checks the variable in question %q
+#   and outputs value n if it's false or 0, and value y is output
+#   when %q is non-zero.
+#   Replace q, n, and y with whatever values you want
+# RPROMPT='%W %* %(?.√.%?)'
 
-#autoload -U compinit 
-#compinit
+#################
+# themes/plugins #
+#################
 
-#bindkey '^a' beginning-of-line
-#bindkey '^e' end-of-line
+# themes
 
-# theme/plugins
+# plugins
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-##source ~/.config/zsh/zsh-auto-notify/auto-notify.plugin.zsh
-##source ~/.config/zsh/you-should-use/you-should-use.plugin.zsh
-#
-###source ~/.config/lf/lfcd.sh
-##
-###zstyle ':completion:*' menu select
-##
+
+###############
+# Keybindings #
+###############
+
 ### history substring search options
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
-### zsh colored files directories
-alias ls='ls --color=auto'
+##########################
+# Set up Starship prompt #
+##########################
 
-### Applications
-# Starship
-eval "$(starship init zsh)
-export STARSHIP_FONT=JetBrainsMono-Regular
+eval "$(starship init zsh)"
 
-# Run neofetch to create the config.conf file
 neofetch
