@@ -28,22 +28,18 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 && apt install gh -y
 
 # Install JetBrains Mono font (used by starship and neovim)  < FIX FONT LOCATION TO SAVE IN USER PROFILE >
-wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
-unzip Hack-v3.003-ttf.zip -d /usr/local/share/fonts -yellow -y 
-rm -rf Hack-v3.003-ttf.zip
-
-# move files from the dotfile to the root
-# Download dotfiles from GitHub
-# git clone https://github.com/guanz808/dotfiles.git
+#wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip
+#unzip Hack-v3.003-ttf.zip -d /usr/local/share/fonts -yellow -y 
+#rm -rf Hack-v3.003-ttf.zip
 
 ### Remove the .config directory ###
 rm -rf .config
 
 # Move necessary files to home directory and remove unnecessary files
-mv -f dotfiles/{.bashrc,.zshrc} ~
-mv -f dotfiles/.config ~
-mv -f dotfiles/.zshenv ~
-rm -rf dotfiles/{.git,LICENSE,README.md}
+#mv -f dotfiles/{.bashrc,.zshenv} ~       # move .bashrc and .zshrc files from dotfiles to ~
+mv -f dotfiles/.config ~                  # move .config folder from the dotfiles folder to ~
+mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles folder to ~
+rm -rf dotfiles/{.git,LICENSE,README.md}  # delete the dotfiles folder
 
 
 
