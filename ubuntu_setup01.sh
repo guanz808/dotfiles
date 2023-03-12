@@ -39,7 +39,7 @@ rm -rf .config
 #mv -f dotfiles/{.bashrc,.zshenv} ~       # move .bashrc and .zshrc files from dotfiles to ~
 mv -f dotfiles/.config ~                  # move .config folder from the dotfiles folder to ~
 mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles folder to ~
-rm -rf dotfiles/{.git,LICENSE,README.md}  # delete the dotfiles folder
+#  # delete the dotfiles folder
 
 
 
@@ -56,9 +56,17 @@ apt install -y neofetch
 # Download neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
 
+# if you get the error "/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)"
+# run the following command
+# apt install locales
+# locale-gen en_US.UTF-8
+
 # Create ~/.config/nvim folder
 # mkdir -p ~/.config/nvim
 # curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
+
+# install neovim and cleanup
+apt install ./nvim-linux64.deb
 
 # Neovin fix
 rm /usr/share/applications/nvim.desktop
@@ -66,7 +74,6 @@ apt-get remove neovim-runtime -y
 
 # install neovim and cleanup
 apt install ./nvim-linux64.deb
-
 
 # Download neovim configuration files
 #cd ~
@@ -96,11 +103,12 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZDOTDIR:-~
 
 ##  # Install necessary packages for starship
 ##  apt-get update &&  apt-get install curl -y
-##  
+
 # Install Starship
 wget https://starship.rs/install.sh -O starshipInstall.sh
 chmod +x starshipInstall.sh
 ./starshipInstall.sh -y
+
 
 
 ##  # Add starship.toml configuration file
@@ -111,8 +119,8 @@ chmod +x starshipInstall.sh
 ##  # Download ZSH .zshrc config file
 ##  curl -o .zshrc https://raw.githubusercontent.com/guanz808/dotfiles/main/.zshrc
 ##  
-##  # Start ZSH
-##  zsh
+# Start ZSH
+zsh
 
 # Cleanup
 rm -rf dotfiles
