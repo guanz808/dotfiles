@@ -39,7 +39,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 rm -rf .config
 
 # Move necessary files to home directory and remove unnecessary files
-#mv -f dotfiles/{.bashrc,.zshenv} ~       # move .bashrc and .zshrc files from dotfiles to ~
+mv -f dotfiles/{.gitconfig} ~       # move .bashrc and .zshrc files from dotfiles to ~
 mv -f dotfiles/.config ~                  # move .config folder from the dotfiles folder to ~
 mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles folder to ~
 #  # delete the dotfiles folder
@@ -123,9 +123,10 @@ chmod +x starshipInstall.sh
 ##  curl -o .zshrc https://raw.githubusercontent.com/guanz808/dotfiles/main/.zshrc
 
 # Cleanup
-rm -rf dotfiles
-rm -rf ./nvim-linux64.deb
-rm -rf starshipInstall.sh
+rm -r dotfiles
+rm -r ./nvim-linux64.deb
+rm -r starshipInstall.sh
+rm -r ubuntu_setup01.sh
 
 # Start ZSH
 zsh
