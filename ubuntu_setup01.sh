@@ -19,7 +19,7 @@ apt-get install -y git
 # Verify the Git installation
 git --version
 
-# Install GitHub CLI
+# Install GitHub CLI 
 type -p curl >/dev/null || apt install curl -y
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
