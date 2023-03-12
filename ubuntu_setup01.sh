@@ -3,7 +3,7 @@ cd ~
 apt update && apt upgrade -y
 apt install wget jq curl unzip gnupg software-properties-common git -y 
 
-# Azure CLI
+# Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 
 # Install Terraform
