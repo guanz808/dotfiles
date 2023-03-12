@@ -39,7 +39,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of
 rm -rf .config
 
 # Move necessary files to home directory and remove unnecessary files
-mv -f dotfiles/{.gitconfig} ~       # move .bashrc and .zshrc files from dotfiles to ~
+mv -f dotfiles/.gitconfig ~               # move .gitconfig file(s) from dotfiles to ~
 mv -f dotfiles/.config ~                  # move .config folder from the dotfiles folder to ~
 mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles folder to ~
 #  # delete the dotfiles folder
