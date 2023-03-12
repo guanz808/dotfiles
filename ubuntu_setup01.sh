@@ -3,6 +3,9 @@ cd ~
 apt update && apt upgrade -y
 apt install wget jq curl unzip gnupg software-properties-common git -y 
 
+# Clone Dotfiles repository
+git clone https://github.com/guanz808/dotfiles.git
+
 # Azure CLI 
 curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 

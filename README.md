@@ -5,7 +5,8 @@
 apt update && apt upgrade -y
 apt install curl git -y
 cd $pwd
-git clone https://github.com/guanz808/dotfiles.git
-chmod +x ~/dotfiles/ubuntu_setup01.sh
-~/dotfiles/ubuntu_setup01.sh -y
+#git clone https://github.com/guanz808/dotfiles.git
+curl -o ~/ubuntu_setup01.sh https://raw.githubusercontent.com/guanz808/dotfiles/main/ubuntu_setup01.sh
+chmod +x ~/ubuntu_setup01.sh
+~/ubuntu_setup01.sh -y
 ```
