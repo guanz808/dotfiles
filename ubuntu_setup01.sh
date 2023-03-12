@@ -118,11 +118,11 @@ chmod +x starshipInstall.sh
 ##  
 ##  # Download ZSH .zshrc config file
 ##  curl -o .zshrc https://raw.githubusercontent.com/guanz808/dotfiles/main/.zshrc
-##  
-# Start ZSH
-zsh
 
 # Cleanup
 rm -rf dotfiles
 rm -rf ./nvim-linux64.deb
 rm -rf starshipInstall.sh
+
+# Start ZSH
+zsh
