@@ -24,7 +24,7 @@ curl -o ~/.config/neofetch/config.conf https://raw.githubusercontent.com/guanz80
 
 # Append neofetch to the end of .bashrc if it doesn't exist
 # echo -e "\n" "# Run Neofetch"
-#sed -zi '/neofetch/!s/$/\nneofetch/' ~/.bashrc
+#sed -zi '/neofetch/!s/$/\neofetch/' ~/.bashrc
 
 # Customize the command prompt. Append the value of $PROMT to .bashrc if it doesn't exist.
 #PROMPT=export PS1="\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;11m\]@\[$(tput sgr0)\]\[\033[38;5;14m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\\$ \[$(tput sgr0)\]"
