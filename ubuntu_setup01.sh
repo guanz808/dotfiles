@@ -53,30 +53,23 @@ apt install -y neofetch
 # mkdir -p ~/.config/neofetch
 # curl -o ~/.config/neofetch/config.conf https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/neofetch/config.conf
 
-# install neovim
-# apt install neovim -y
-
-# Download neovim
-curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
-
-# if you get the error "/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)"
-# run the following command
-# apt install locales
-# locale-gen en_US.UTF-8
-
+# Install neovim
 # Create ~/.config/nvim folder
 # mkdir -p ~/.config/nvim
 # curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
+# Download neovim
+curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+# extract
+tar xzvf nvim-linux64.tar.gz
+# move the nvim-linux64 directory
+mv ~/nvim-linux64 /opt/
+# Create a symbolic link in /usr/local/bin
+ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+# Make the symlink executable
+chmod +x /usr/local/bin/nvim
 
-# install neovim and cleanup
-apt install ./nvim-linux64.deb
-
-# Neovin fix
-rm /usr/share/applications/nvim.desktop
-apt-get remove neovim-runtime -y
-
-# install neovim and cleanup
-apt install ./nvim-linux64.deb
+# Remove the nvim-linux64.tar.gz file
+rm nvim-linux64.tar.gz
 
 # Download neovim configuration files
 #cd ~
