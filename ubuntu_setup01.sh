@@ -44,8 +44,6 @@ mv -f dotfiles/.config ~                  # move .config folder from the dotfile
 mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles folder to ~
 #  # delete the dotfiles folder
 
-
-
 ### Install neofetch ###
 apt install -y neofetch
 
@@ -57,14 +55,19 @@ apt install -y neofetch
 # Create ~/.config/nvim folder
 # mkdir -p ~/.config/nvim
 # curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
+
 # Download neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
+
 # extract
 tar xzvf nvim-linux64.tar.gz
+
 # move the nvim-linux64 directory
 mv ~/nvim-linux64 /opt/
+
 # Create a symbolic link in /usr/local/bin
 ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+
 # Make the symlink executable
 chmod +x /usr/local/bin/nvim
 
