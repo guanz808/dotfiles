@@ -54,14 +54,24 @@ mv -f dotfiles/.zshenv ~                  # move the .zshenv from the dotfiles f
 ### Install neofetch ###
 sudo apt install -y neofetch
 
+# Install neovim
 # Download neovim
-sudo curl -LO https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb
+curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
 
-# install neovim and cleanup
-sudo apt install ./nvim-linux64.deb
+# extract
+tar xzvf nvim-linux64.tar.gz
 
-# cleanup neovim
-sudo rm ./nvim-linux64.deb
+# move the nvim-linux64 directory
+sudo mv ~/nvim-linux64 /opt/
+
+# Create a symbolic link in /usr/local/bin
+sudo ln -s /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+
+# Make the symlink executable
+sudo chmod +x /usr/local/bin/nvim
+
+# Remove the nvim-linux64.tar.gz file
+rm nvim-linux64.tar.gz
 
 # Install ZSH
 sudo apt install zsh -y
