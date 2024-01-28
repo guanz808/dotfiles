@@ -55,6 +55,7 @@ apt install -y neofetch
 # Create ~/.config/nvim folder
 # mkdir -p ~/.config/nvim
 # curl -o ~/.config/nvim/ https://raw.githubusercontent.com/guanz808/dotfiles/main/.config/nvim/
+apt-get install build-essential -y
 
 # Download neovim
 curl -LO https://github.com/neovim/neovim/releases/download/v0.9.5/nvim-linux64.tar.gz
