@@ -20,8 +20,11 @@ echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://
 sudo apt update && sudo apt install terraform
 
 # Install Git on Ubuntu 22.04
-apt-get update
-apt-get install -y git
+#apt-get update
+#apt-get install -y git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
 
 # Verify the Git installation
 git --version
