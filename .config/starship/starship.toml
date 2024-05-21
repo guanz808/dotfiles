@@ -4,7 +4,10 @@ error_symbol = "[](bold red)"
 vicmd_symbol = "[](bold green)"
 
 [git_branch]
-symbol = " "
+symbol = '🌱 '
+#truncation_length = 4
+#truncation_symbol = ''
+#ignore_branches = ['master', 'main']
 
 [git_status]
 ahead = " "
