@@ -19,8 +19,8 @@ staged = " "
 untracked = " "
 
 [cmd_duration]
-min_time = 5000
-format = "took [⏱ ]"
+#min_time = 5000
+#format = "took [⏱ ]"
 
 [directory]
 truncation_length = 3
