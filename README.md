@@ -1,4 +1,4 @@
-# dotfiles :octocat:
+# dotfiles
 
 ### To run the install and configuration on an Ubuntu container:
 ```
